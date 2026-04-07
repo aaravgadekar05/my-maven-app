@@ -7,7 +7,7 @@ configured inJenkins
 stages {
 stage('Checkout') {
 steps {
-git branch: 'master', url: '<repo link>'
+git branch: 'master', url: 'https://github.com/aaravgadekar05/my-maven-app.git'
 }
 }
 stage('Build') {
@@ -23,7 +23,7 @@ sh 'mvn test' // Run unit tests
 stage('Run Application') {
 steps {
 // Start the JAR application
-sh 'java -jar target/MyMavenApp-1.0-SNAPSHOT.jar'
+sh 'java -jar target/*-1.0-SNAPSHOT.jar'
 }
 }
 }
